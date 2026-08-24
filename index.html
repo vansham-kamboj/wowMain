@@ -2,81 +2,174 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Wow Global Studies - Under Maintenance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(to right, #d673fd, #8535a7);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            color: #fff;
-            text-align: center;
+        :root {
+            --bg-color: #ffffff;
+            --text-primary: #1e1e2f;
+            --accent: #6366f1;
+            --pill-bg: #f8f9fa;
+            --pill-border: #e5e7eb;
+            --pill-text: #4b5563;
         }
 
-        .container {
-            max-width: 600px;
-            padding: 30px;
-            background: linear-gradient(to right, #b250d9, #ba5fe1);
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+        }
+
+        .page-wrapper {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2rem;
+        }
+
+        /* Top Section */
+        .top-section {
+            text-align: center;
+            margin-top: 1rem;
+            z-index: 10;
+        }
+
+        .logo {
+            max-width: 160px;
+            margin-bottom: 1rem;
         }
 
         h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #111827;
+        }
+        
+        p.subtitle {
+            font-size: 1rem;
+            color: #6b7280;
+            margin-top: 0.5rem;
         }
 
-        p {
-            font-size: 1.2em;
-            margin-bottom: 20px;
+        /* Center Section */
+        .center-section {
+            position: relative;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 700px;
         }
 
-        .contact-details {
-            margin-top: 20px;
+        .main-img {
+            max-width: 70%;
+            max-height: 45vh;
+            object-fit: contain;
+            /* No shadow, no animation, blends perfectly with white bg */
+            z-index: 5;
         }
 
-        .contact-details p {
-            margin: 5px 0;
+        /* Small Pill Cards */
+        .pill {
+            position: absolute;
+            background: var(--pill-bg);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-weight: 500;
+            color: var(--pill-text);
+            border: 1px solid var(--pill-border);
+            z-index: 10;
+            white-space: nowrap;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
-        a {
-            color: #ffeb3b;
+        .pill-1 { top: 20%; left: 10%; }
+        .pill-2 { top: 15%; right: 10%; }
+        .pill-3 { bottom: 25%; left: 15%; }
+        .pill-4 { bottom: 15%; right: 15%; }
+
+        /* Bottom Section */
+        .bottom-section {
+            text-align: center;
+            margin-bottom: 1rem;
+            z-index: 10;
+        }
+
+        .mail-box {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .mail-box span {
+            font-size: 0.75rem;
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.25rem;
+        }
+
+        .mail-box a {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-primary);
             text-decoration: none;
-            font-weight: bold;
+            transition: color 0.2s;
         }
 
-        a:hover {
-            text-decoration: underline;
+        .mail-box a:hover {
+            color: var(--accent);
         }
 
-        .animation {
-            font-size: 3em;
-            font-weight: 600;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
+        @media (max-width: 768px) {
+            .pill { padding: 0.3rem 0.7rem; font-size: 0.65rem; }
+            .pill-1 { top: 10%; left: 0%; }
+            .pill-2 { top: 5%; right: 0%; }
+            .pill-3 { bottom: 10%; left: 0%; }
+            .pill-4 { bottom: 5%; right: 0%; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>We're Under Maintenance</h1>
-        <p class="animation">Wow Global Studies</p>
-        <p>Our website is currently undergoing scheduled maintenance. We should be back shortly. Thank you for your patience!</p>
-        <div class="contact-details">
-            <p>For urgent inquiries, please contact us at:</p>
-            <p>Email: <a >Brd.wowemeralds@gmail.com</a></p>
-            <p>Phone: <a >+91 9925944556</a></p>
-            <p>Phone: <a >+91 9924944556</a></p>
+    <div class="page-wrapper">
+        <div class="top-section">
+            <img src="logo.png" alt="Wow Global Studies" class="logo">
+            <h1>Elevating Our Experience</h1>
+            <p class="subtitle">Available Soon</p>
+        </div>
+
+        <div class="center-section">
+            <div class="pill pill-1"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg> New Features</div>
+            <div class="pill pill-2"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg> Faster Platform</div>
+            <img src="main-img.png" alt="3D Illustration" class="main-img">
+            <div class="pill pill-3"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg> Better Journey</div>
+            <div class="pill pill-4"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.9 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg> Stay Tuned</div>
+        </div>
+
+        <div class="bottom-section">
+            <div class="mail-box">
+                <span>For inquiries</span>
+                <a href="mailto:brd.wowemeralds@gmail.com">brd.wowemeralds@gmail.com</a>
+            </div>
         </div>
     </div>
 </body>
